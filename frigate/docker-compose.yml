@@ -1,0 +1,24 @@
+services:
+  frigate:
+    container_name: frigate
+    image: ghcr.io/blakeblackshear/frigate:stable
+    privileged: true
+    restart: unless-stopped
+    shm_size: "512mb"
+    network_mode: host
+
+    volumes:
+      - /home/gort/frigate/config:/config
+      - /mnt/bulk/frigate/media:/media/frigate
+      - /etc/localtime:/etc/localtime:ro
+
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

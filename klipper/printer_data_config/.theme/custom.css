@@ -1,0 +1,14 @@
+Pseudo ::scrollbar element
+::-webkit-scrollbar {
+    background-color: # 8e432f;
+    width: 14px;
+    height: 14px;
+}
+Pseudo ::scrollbar-thumb element
+::-webkit-scrollbar-thumb {
+    background-color: #8e432f;
+    border-radius: 7px;
+    border: 4px solid # 8e432f;
+    min-width: 100px;
+    min-height: 100px;
+}
